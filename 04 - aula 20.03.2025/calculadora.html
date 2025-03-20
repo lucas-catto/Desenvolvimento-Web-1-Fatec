@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script>
+            function calc() {
+                // Get value from inputs
+                var firstNumber = document.getElementById('firstNumber').value;
+                var secondNumber = document.getElementById('secondNumber').value;
+
+                // Convert numbers to Float
+                var firstNumber = parseFloat(firstNumber);
+                var secondNumber = parseFloat(secondNumber);
+
+                // Get operator and result div
+                var option = document.getElementById('option').value;
+                var result = document.getElementById('result');
+                
+                // validate and return result
+                if (option == '+') {
+                    return result.textContent = "Resultado: " + (firstNumber + secondNumber);
+                }
+                else if (option == '-') {
+                    return result.textContent = "Resultado: " + (firstNumber - secondNumber);
+                }
+                else {
+                    return alert('invalid operator.');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number" name="firstNumber" id="firstNumber" placeholder="Número 1">
+        <input type="number" name="secondNumber" id="secondNumber" placeholder="Número 2">
+        
+        <select id="option">
+            <option value="+">+</option>
+            <option value="-">-</option>
+        </select>
+
+        <button onclick="calc()">Calcular</button>
+
+        <div id="result"></div>
+    </body>
+</html>
